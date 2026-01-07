@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Optimized Title & Description -->
+    <title>Spendify - AI Finance Tracker | Secure Budgeting & Fraud Detection</title>
+    <meta name="description" content="Spendify: AI-powered finance tracker with real-time budgeting, fraud detection, and investment insights. Secure your financial future today." />
+    <meta name="author" content="Spendify Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Spendify - AI Finance Tracker | Secure Budgeting & Fraud Detection" />
+    <meta property="og:description" content="Track every penny with AI-powered insights. Detect fraud instantly. Achieve your financial goals with Spendify." />
+    <meta property="og:url" content="https://spendify.app" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Spendify - AI Finance Tracker Dashboard" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SpendifyApp" />
+    <meta name="twitter:creator" content="@SpendifyApp" />
+    <meta name="twitter:title" content="Spendify - AI Finance Tracker | Secure Budgeting & Fraud Detection" />
+    <meta name="twitter:description" content="AI-powered finance tracking with fraud detection. Take control of your money today." />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+    <meta name="twitter:image:alt" content="Spendify Finance Dashboard" />
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="finance tracker, budgeting app, AI finance, fraud detection, expense tracker, investment tracker, personal finance, secure payments, financial management" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Spendify",
+      "description": "AI-powered personal finance tracker with fraud detection and investment insights",
+      "url": "https://spendify.app",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "AI Fraud Detection",
+        "Real-time Budgeting",
+        "Investment Tracking",
+        "Multi-platform Sync"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Spendify" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f766e" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/hero-bg.jpg" as="image" />
+    
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+    <link rel="dns-prefetch" href="//spendify.app" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://spendify.app/" />
+    
+    <!-- Viewport & Performance -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+  </head>
+
+  <body className="antialiased font-sans bg-gradient-to-br from-slate-50 via-white to-emerald-50">
+    <div id="root"></div>
+    
+    <!-- Critical Inline Styles for Above-the-Fold -->
+    <style>
+      * { 
+        -webkit-tap-highlight-color: transparent; 
+      }
+      html { 
+        scroll-behavior: smooth; 
+        scroll-padding-top: 80px;
+      }
+      body {
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+        overscroll-behavior: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+    
+    <!-- Main App Script -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
